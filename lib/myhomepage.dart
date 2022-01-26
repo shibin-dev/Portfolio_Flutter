@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHome extends StatelessWidget {
@@ -18,9 +19,11 @@ class MyHome extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: media.height * .2,
+                height: media.height * .05,
               ),
               CircleAvatar(
                 radius: media.width * .16,
@@ -46,57 +49,61 @@ class MyHome extends StatelessWidget {
                     color: Colors.white),
               ),
               SizedBox(
-                height: 5,
+                height: 8,
               ),
-              Text('Accountant'),
+              Text('Accountant',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
               SizedBox(
-                height: 6,
+                height: 15,
               ),
-              Text(
-                'Connect with me',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              Shimmer.fromColors(
+                baseColor: Colors.black54,
+                highlightColor: Colors.grey[300],
+                child: Text(
+                  'Connect with me',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ImageContainer(
-                      'assets/telegram.png', 'https://www.instagram.com'),
+                      'assets/telegram.png', 'https://t.me/RakeshRajan555'),
                   SizedBox(
                     width: 5,
                   ),
-                  ImageContainer(
-                      'assets/gmail.png', 'https://www.instagram.com'),
+                  ImageContainer('assets/linkedin.png',
+                      'https://www.linkedin.com/in/rakesh-c-b6aa1220a'),
                   SizedBox(
                     width: 5,
                   ),
-                  ImageContainer(
-                      'assets/linkedin.png', 'https://www.instagram.com'),
+                  ImageContainer('assets/insta.png',
+                      'https://www.instagram.com/its_rakesh_kbm/'),
                   SizedBox(
                     width: 5,
                   ),
-                  ImageContainer(
-                      'assets/insta.png', 'https://www.instagram.com'),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  ImageContainer(
-                      'assets/tweeter.png', 'https://www.instagram.com'),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  ImageContainer(
-                      'assets/facebook.png', 'https://www.instagram.com'),
+                  ImageContainer('assets/facebook.png',
+                      'https://m.facebook.com/100006892897687/'),
                 ],
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Download Resume'),
-                style: ElevatedButton.styleFrom(primary: Colors.yellow[700]),
-              ),
+              SizedBox(
+                height: 5,
+              )
+              // ElevatedButton(
+              //   onPressed: () {},
+              //   child: Text('Download Resume'),
+              //   style: ElevatedButton.styleFrom(primary: Colors.yellow[700]),
+              // ),
             ],
           ),
         ),
