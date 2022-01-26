@@ -51,11 +51,6 @@ class MyHome extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              Text('Accountant',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
               SizedBox(
                 height: 15,
               ),
